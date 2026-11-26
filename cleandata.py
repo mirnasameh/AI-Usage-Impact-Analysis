@@ -1,14 +1,9 @@
-
 import pandas as pd
 import numpy as np
 import os
 
-
-
-INPUT_FILE = "mergedata.xlsx"
-OUTPUT_FILE = "cleaned_dataset.xlsx"
-
-
+INPUT_FILE = "outputs/mergedata.xlsx"
+OUTPUT_FILE = "outputs/cleaned_dataset.xlsx"
 
 print("Loading dataset...")
 
@@ -22,11 +17,12 @@ df = pd.read_excel(INPUT_FILE)
 print("\nDataset loaded successfully!")
 print("Original dataset shape:", df.shape)
 
-
-
 print("\nFirst 5 rows:")
 print(df.head())
-
+#Column names.
+#Number of non-null values.
+#Data types.
+#Memory usage.
 print("\nDataset information:")
 df.info()
 

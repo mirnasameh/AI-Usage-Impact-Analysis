@@ -1,10 +1,8 @@
-import pandas as pd
+import pandas as pd  
 
-# Read both Excel files
 main = pd.read_excel("data/ai_impact_student_performance_dataset.xlsx")
 ai = pd.read_excel("data/Ai_Impact.xlsx")
 
-# Select only the columns we need
 ai_selected = ai[
     [
         "User_ID",
@@ -14,7 +12,7 @@ ai_selected = ai[
     ]
 ]
 
-# Merge the datasets
+
 merged = pd.merge(
     main,
     ai_selected,
@@ -23,8 +21,5 @@ merged = pd.merge(
     how="left"
 )
 
-# Remove the duplicate ID column
 merged = merged.drop(columns=["User_ID"])
-
-# Export the result
-merged.to_excel("mergedata.xlsx", index=False)
+merged.to_excel("outputs/mergedata.xlsx", index=False)
